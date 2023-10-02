@@ -1,7 +1,7 @@
 package creational;
 
 public class SingletonPattern {
-    private static SingletonPattern singletonPattern;
+    private static volatile SingletonPattern singletonPattern;
 
     private static int count=0;
 
