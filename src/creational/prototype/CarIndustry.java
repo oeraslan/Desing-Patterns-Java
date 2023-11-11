@@ -2,7 +2,7 @@ package creational.prototype;
 
 import java.util.Date;
 
-public class CarApp {
+public class CarIndustry {
     public static long totalTime = 0;
     public static void main(String[] Args){
 
@@ -23,8 +23,10 @@ public class CarApp {
         Date fourthCarTime = new Date();
         Car fourthCar = firstCar.clone();
         fourthCar.setName("A4");
-        fourthCar.setEngine(new Engine(4,"3.0"));
+        fourthCar.setEngine(carService.buildEngine(4,"3.0"));
         printTime(fourthCar,fourthCarTime);
+        System.out.println("------------------------------------------------------");
+        System.out.println(firstCar);
     }
     public static void printTime(Car car,Date start){
         Date end = new Date();

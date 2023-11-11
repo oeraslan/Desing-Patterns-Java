@@ -44,7 +44,9 @@ public class Car implements Cloneable{
                 "id=" + id +
                 ", name='" + name + '\'' +
                 ", engine=" + engine +
+                ",engine HashCode=" + engine.hashCode() +
                 ", wheel=" + wheel +
+                ",wheel HashCode="+ wheel.hashCode() +
                 '}';
     }
 
@@ -52,7 +54,8 @@ public class Car implements Cloneable{
     public Car clone() {
         try {
             Car clone = (Car) super.clone();
-            // TODO: copy mutable state here, so the clone can't change the internals of the original
+            clone.setEngine(engine.clone());
+            clone.setWheel(wheel.clone());
             return clone;
         } catch (CloneNotSupportedException e) {
             throw new AssertionError();
